@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">GitSort</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         
+            <input class="form-control mr-sm-2" style="width:200px;" #myInput (keyup) = newEvent(myInput.value) type="search" placeholder="Search" aria-label="Search">
+            <button (click) = "routeToSearch()">Search</button>
+          
+        </div>
+
+        <div class="dropdown" style="margin-right: 20px; ">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <strong>+</strong>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                  <li><a href="#">New Repository</a></li>
+                  <li><a href="#">Import Repository</a></li>
+                  <li><a href="#">New Issue</a></li>
+                </ul>
+        </div>
+</nav>
+<router-outlet></router-outlet>

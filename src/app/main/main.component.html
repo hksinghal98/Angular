@@ -1,0 +1,23 @@
+<div class="container row" style="padding-top: 20px;">
+    <div class="col-sm-3">
+            <div class="card">
+                <img class="card-img-top rounded-circle" src="{{user.avatar_url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Himanshu Singhal</h5>
+                    <p class="card-text">{{user.location}}</p>
+                    <p class="card-text">{{user.company}}</p>
+                    <a href="#" class="btn btn-primary">Edit Profile</a>
+                </div>
+            </div>
+    </div>
+    <div class="list-group col-sm-8" style="">
+      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" *ngFor = 'let res of repos'>
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1"><strong>{{res.name}}</strong></h5>
+          <small>{{res.updated_at}}</small>
+        </div>
+        <p class="mb-1"><small>{{res.description}}</small></p>
+      </a>
+    </div>
+    
+</div>
