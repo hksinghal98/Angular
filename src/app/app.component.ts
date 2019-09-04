@@ -22,9 +22,15 @@ export class AppComponent {
       this.router.navigateByUrl('search')
     })
   }
+  routeToCreateRepo(){
+    this.router.navigateByUrl("").then(()=> {
+      this.router.navigateByUrl('create')
+    })
+  }  
 
-  
-
-
-  
+  routeToFavourites(){
+    this.router.navigateByUrl("").then(()=> {
+      this.router.navigateByUrl('favourites')
+    })
+  }  
 }

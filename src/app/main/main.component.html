@@ -11,11 +11,11 @@
             </div>
     </div>
     <div class="list-group col-sm-8" style="">
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" *ngFor = 'let res of repos'>
+      <a (click) = "routeToGetDetails(i)" class="list-group-item list-group-item-action flex-column align-items-start" *ngFor = 'let res of repos; index as i'>
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1"><strong>{{res.name}}</strong></h5>
-          <small>{{res.updated_at}}</small>
         </div>
+        <p><small>{{res.updated_at}}</small></p>
         <p class="mb-1"><small>{{res.description}}</small></p>
       </a>
     </div>
