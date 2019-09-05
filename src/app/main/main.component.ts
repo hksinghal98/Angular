@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
   routeToGetDetails(index){
     var repo = this.repos[index];
     console.log(repo);
-    this._gitSortService.repoIndex(this.repos[index]);
+    //this._gitSortService.repoIndex(this.repos[index]);
     this.router.navigate(['/repo_details', repo.owner.login, repo.id,repo.name]);
   }
 

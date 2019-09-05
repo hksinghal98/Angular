@@ -16,7 +16,7 @@ export class GitSortService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Token 81a4b7447becddb99195f68255462069012095ab'
+      'Authorization': 'Token  e4e19867046d907659f396ccc4b9730f1a5abc81'
     })
   }
    public userName = "hksinghal98";
@@ -47,7 +47,7 @@ export class GitSortService {
     this.searchKeyword=msg;
   }
   search():Observable<Iuser[]>{
-    console.log("in service");
+    if(this.searchKeyword=""){this.searchKeyword=",.,;"}
     return this._http.get<Iuser[]>("https://api.github.com/search/repositories?q="+this.searchKeyword);
   }
   setRepoData(repoData){
@@ -60,15 +60,17 @@ export class GitSortService {
   repoIndex(data){
     this.Index = data;
   }
-  getRepoData(){
-    return this.Index;
+  // getRepoData(){
+  //   return this.Index;
+  // }
+  getRepoData(owner, repoName){
+    return this._http.get<any>("https://api.github.com/repos/"+owner+"/"+repoName);
   }
   repoDelete(repoName):Observable<any>{
     return this._http.delete<any>("https://api.github.com/repos/hksinghal98/"+repoName, this.httpOptions);
   }
 
   favouritesList(name):Observable<any>{
-    console.log(name);
     return this._http.get<any>("http://localhost:3000/repos?name="+name);
   }
 

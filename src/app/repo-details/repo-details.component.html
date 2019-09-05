@@ -1,36 +1,34 @@
-<div class="container row" style="padding-top: 20px;">
-        <div class="col-sm-1"></div>
-        <div class="jumbotron col-sm-11">
-                <h1 class="display-4" style="text-align: center;">{{details.name}}</h1>
-                <p style="text-align: center;"><small>{{details.description}}</small></p>
+<div class="container row" style="padding-top: 20px; margin-left: auto; margin-right: 0px;">
+        <div class="jumbotron col-sm-9">
+                <h1 style="text-align: center;">{{details?.name}}</h1>
+                <p style="text-align: center;"><small>{{details?.description}}</small></p>
                 <hr class="my-4">
-                <p><strong>Owner: </strong>{{details.owner.login}}</p>
-                <p><strong>Last Updated: </strong>{{details.updated_at}}</p>
-                <p><strong>Created at: </strong>{{details.created_at}}</p>
-                <p><strong>Forks: </strong>{{details.forks}}</p>
-                <p><strong>Repository Url: </strong>{{details.html_url}}</p>
+                <p><strong>Owner: </strong>{{details?.owner.login}}</p>
+                <p><strong>Last Updated: </strong>{{details?.updated_at}}</p>
+                <p><strong>Created at: </strong>{{details?.created_at}}</p>
+                <p><strong>Forks: </strong>{{details?.forks}}</p>
 
                 <hr>
-                <div class="row" style="text-align: center">
+                <div class="row"  style="text-align: center">
                     <p class="lead col-sm-3">
-                        <a class="btn btn-primary btn-lg" (click) = "deleteRepo([details.name])" role="button">Delete Repository</a>
+                        <button class="btn btn-primary btn-lg" (click) = "deleteRepo([details.name])" role="button">Delete Repository</button>
                     </p> 
 
                     <div *ngIf = "flag;then add else remove"></div>
                     
                     <ng-template #add>
                         <p class="lead col-sm-3">
-                            <a class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#addCommentModal">Mark Favourite</a>
+                            <button class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#addCommentModal">Mark Favourite</button>
                         </p>
                     </ng-template>
                     <ng-template #remove>
                         <p class="lead col-sm-3">
-                            <a class="btn btn-primary btn-lg" (click) = "removeFavourites()" role="button">Unmark Favourite</a>
+                            <button class="btn btn-primary btn-lg" (click) = "removeFavourites()" role="button">Unmark Favourite</button>
                         </p>
                     </ng-template>
 
                     <p class="lead col-sm-3">
-                            <a class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#editCommentModal">Edit Comments</a>
+                            <button class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#editCommentModal">Edit Comments</button>
                     </p>
                     </div>
 

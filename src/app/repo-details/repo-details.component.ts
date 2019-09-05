@@ -19,6 +19,7 @@ export class RepoDetailsComponent implements OnInit {
             this.owner = params['owner'];
             this.name = params['name'];
             this.id = params['id'];
+
     })
   }
 
@@ -28,8 +29,10 @@ export class RepoDetailsComponent implements OnInit {
   public flag:any;
 
   ngOnInit() {
-    this.details=this._gitSortService.getRepoData();
-    this._gitSortService.favouritesList(this.details.name).subscribe(data=>
+    //this.details=this._gitSortService.getRepoData();
+    this._gitSortService.getRepoData(this.owner, this.name).subscribe(data=>{this.details=data});
+    console.log(this.details);
+    this._gitSortService.favouritesList(this.name).subscribe(data=>
       {
         if(data['length']==0) {
           this.flag = true;

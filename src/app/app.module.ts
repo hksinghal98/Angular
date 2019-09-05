@@ -10,6 +10,7 @@ import { CreateRepoComponent } from './create-repo/create-repo.component';
 import {FormsModule} from '@angular/forms';
 import { RepoDetailsComponent } from './repo-details/repo-details.component';
 import { FavouriteComponent } from './favourite/favourite.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { FavouriteComponent } from './favourite/favourite.component';
     routingComponents,
     CreateRepoComponent,
     RepoDetailsComponent,
-    FavouriteComponent
+    FavouriteComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

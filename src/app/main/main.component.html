@@ -1,5 +1,5 @@
-<div class="container row" style="padding-top: 20px;">
-    <div class="col-sm-3">
+<div class="container row">
+    <div class="col-sm-3" style="padding-top: 20px;">
             <div class="card">
                 <img class="card-img-top rounded-circle" src="{{user.avatar_url}}" alt="Card image cap">
                 <div class="card-body">
@@ -8,15 +8,15 @@
                     <p class="card-text">{{user.company}}</p>
                     <a href="#" class="btn btn-primary">Edit Profile</a>
                 </div>
-            </div>
+            </div>as
     </div>
-    <div class="list-group col-sm-8" style="">
+    <div class="list-group col-sm-8" style="padding-left: 15px; padding-top: 20px;">
       <a (click) = "routeToGetDetails(i)" class="list-group-item list-group-item-action flex-column align-items-start" *ngFor = 'let res of repos; index as i'>
         <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1"><strong>{{res.name}}</strong></h5>
+          <h5 class="mb-1"><strong>{{res?.name}}</strong></h5>
         </div>
-        <p><small>{{res.updated_at}}</small></p>
-        <p class="mb-1"><small>{{res.description}}</small></p>
+        <p><small>{{res?.updated_at}}</small></p>
+        <p class="mb-1"><small>{{res?.description}}</small></p>
       </a>
     </div>
     
